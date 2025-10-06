@@ -1,0 +1,527 @@
+/* ===== PARALLAX EFFECTS ===== */
+
+/* Parallax Container */
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Topographic Pattern Layers */
+.topographic-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    will-change: transform;
+}
+
+/* Layer 1 - Base topographic pattern */
+.layer-1 {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(166, 120, 93, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(217, 163, 132, 0.1) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 30%, rgba(166, 120, 93, 0.05) 50%, transparent 70%);
+    transform: translateZ(0);
+    animation: topographicFloat1 25s ease-in-out infinite;
+}
+
+/* Layer 2 - Secondary topographic pattern */
+.layer-2 {
+    background-image: 
+        radial-gradient(circle at 60% 40%, rgba(89, 64, 50, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 40% 60%, rgba(166, 120, 93, 0.08) 0%, transparent 40%),
+        linear-gradient(-45deg, transparent 20%, rgba(89, 64, 50, 0.03) 50%, transparent 80%);
+    transform: translateZ(-1px) scale(1.1);
+    animation: topographicFloat2 30s ease-in-out infinite reverse;
+}
+
+/* Layer 3 - Tertiary topographic pattern */
+.layer-3 {
+    background-image: 
+        radial-gradient(circle at 30% 30%, rgba(217, 163, 132, 0.06) 0%, transparent 60%),
+        radial-gradient(circle at 70% 70%, rgba(89, 64, 50, 0.06) 0%, transparent 60%),
+        linear-gradient(90deg, transparent 10%, rgba(217, 163, 132, 0.02) 50%, transparent 90%);
+    transform: translateZ(-2px) scale(1.2);
+    animation: topographicFloat3 35s ease-in-out infinite;
+}
+
+/* Topographic Animation Keyframes */
+@keyframes topographicFloat1 {
+    0%, 100% { 
+        transform: translateZ(0) translateY(0px) rotate(0deg); 
+        opacity: 0.1;
+    }
+    25% { 
+        transform: translateZ(0) translateY(-10px) rotate(1deg); 
+        opacity: 0.15;
+    }
+    50% { 
+        transform: translateZ(0) translateY(-5px) rotate(0.5deg); 
+        opacity: 0.12;
+    }
+    75% { 
+        transform: translateZ(0) translateY(-15px) rotate(-0.5deg); 
+        opacity: 0.18;
+    }
+}
+
+@keyframes topographicFloat2 {
+    0%, 100% { 
+        transform: translateZ(-1px) scale(1.1) translateY(0px) rotate(0deg); 
+        opacity: 0.08;
+    }
+    33% { 
+        transform: translateZ(-1px) scale(1.1) translateY(-8px) rotate(-1deg); 
+        opacity: 0.12;
+    }
+    66% { 
+        transform: translateZ(-1px) scale(1.1) translateY(-12px) rotate(1deg); 
+        opacity: 0.1;
+    }
+}
+
+@keyframes topographicFloat3 {
+    0%, 100% { 
+        transform: translateZ(-2px) scale(1.2) translateY(0px) rotate(0deg); 
+        opacity: 0.06;
+    }
+    50% { 
+        transform: translateZ(-2px) scale(1.2) translateY(-6px) rotate(0.5deg); 
+        opacity: 0.09;
+    }
+}
+
+/* Parallax Scroll Effects */
+.parallax-element {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Hero Parallax */
+.hero .topographic-layer {
+    transform: translateZ(0);
+    transition: transform 0.1s ease-out;
+}
+
+.hero .layer-1 {
+    transform: translateZ(0) translateY(var(--scroll-y, 0));
+}
+
+.hero .layer-2 {
+    transform: translateZ(-1px) scale(1.1) translateY(calc(var(--scroll-y, 0) * 0.5));
+}
+
+.hero .layer-3 {
+    transform: translateZ(-2px) scale(1.2) translateY(calc(var(--scroll-y, 0) * 0.3));
+}
+
+/* Page Header Parallax */
+.page-header .topographic-layer {
+    transform: translateZ(0);
+    transition: transform 0.1s ease-out;
+}
+
+.page-header .layer-1 {
+    transform: translateZ(0) translateY(calc(var(--scroll-y, 0) * 0.3));
+}
+
+.page-header .layer-2 {
+    transform: translateZ(-1px) scale(1.1) translateY(calc(var(--scroll-y, 0) * 0.2));
+}
+
+/* Section Parallax Effects */
+.section-parallax {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-parallax::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle at 25% 25%, rgba(166, 120, 93, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(217, 163, 132, 0.03) 0%, transparent 50%);
+    transform: translateY(calc(var(--scroll-y, 0) * 0.1));
+    will-change: transform;
+    pointer-events: none;
+}
+
+/* Floating Elements */
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-element:nth-child(2n) {
+    animation-delay: -2s;
+    animation-duration: 8s;
+}
+
+.floating-element:nth-child(3n) {
+    animation-delay: -4s;
+    animation-duration: 10s;
+}
+
+/* Scroll-triggered Animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease;
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease;
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s ease;
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Staggered Animation Delays */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+
+/* Parallax Performance Optimizations */
+.parallax-container,
+.topographic-layer,
+.parallax-element {
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .topographic-layer,
+    .floating-element,
+    .fade-in-up,
+    .fade-in-left,
+    .fade-in-right,
+    .scale-in {
+        animation: none;
+        transition: none;
+    }
+    
+    .hero .layer-1,
+    .hero .layer-2,
+    .hero .layer-3,
+    .page-header .layer-1,
+    .page-header .layer-2 {
+        transform: none;
+    }
+}
+
+/* High Performance Mode */
+.performance-mode .topographic-layer {
+    animation: none;
+    transform: none;
+}
+
+.performance-mode .parallax-element {
+    transform: none;
+}
+
+/* Mobile Parallax Adjustments */
+@media (max-width: 768px) {
+    .topographic-layer {
+        opacity: 0.5;
+    }
+    
+    .layer-1,
+    .layer-2,
+    .layer-3 {
+        animation-duration: 20s;
+    }
+    
+    .hero .layer-1,
+    .hero .layer-2,
+    .hero .layer-3 {
+        transform: none;
+    }
+    
+    .page-header .layer-1,
+    .page-header .layer-2 {
+        transform: none;
+    }
+}
+
+/* Tablet Parallax Adjustments */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .topographic-layer {
+        opacity: 0.7;
+    }
+    
+    .layer-1,
+    .layer-2,
+    .layer-3 {
+        animation-duration: 25s;
+    }
+}
+
+/* Topographic Pattern Variations */
+.topographic-pattern-1 {
+    background-image: 
+        conic-gradient(from 0deg at 50% 50%, 
+            transparent 0deg, 
+            rgba(166, 120, 93, 0.1) 60deg, 
+            transparent 120deg, 
+            rgba(217, 163, 132, 0.1) 180deg, 
+            transparent 240deg, 
+            rgba(89, 64, 50, 0.1) 300deg, 
+            transparent 360deg);
+}
+
+.topographic-pattern-2 {
+    background-image: 
+        radial-gradient(ellipse at 20% 20%, rgba(166, 120, 93, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(217, 163, 132, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(89, 64, 50, 0.05) 0%, transparent 70%);
+}
+
+.topographic-pattern-3 {
+    background-image: 
+        linear-gradient(45deg, transparent 30%, rgba(166, 120, 93, 0.03) 50%, transparent 70%),
+        linear-gradient(-45deg, transparent 30%, rgba(217, 163, 132, 0.03) 50%, transparent 70%),
+        linear-gradient(90deg, transparent 20%, rgba(89, 64, 50, 0.02) 50%, transparent 80%);
+}
+
+/* Interactive Hover Effects */
+.interactive-parallax:hover .topographic-layer {
+    animation-play-state: paused;
+}
+
+.interactive-parallax:hover .layer-1 {
+    transform: translateZ(0) translateY(-5px) scale(1.02);
+}
+
+.interactive-parallax:hover .layer-2 {
+    transform: translateZ(-1px) scale(1.12) translateY(-3px);
+}
+
+.interactive-parallax:hover .layer-3 {
+    transform: translateZ(-2px) scale(1.22) translateY(-2px);
+}
+
+/* ===== DOTTED LINE PARALLAX EFFECT ===== */
+.dotted-line-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.progressive-dotted-line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0%;
+    height: 8px;
+    background: transparent;
+    transform: translateY(-50%);
+    transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: -1;
+    will-change: width, transform;
+}
+
+.progressive-dotted-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-image: repeating-linear-gradient(
+        to right,
+        #594032 0px,
+        #594032 30px,
+        transparent 30px,
+        transparent 45px
+    );
+    background-size: 45px 8px;
+    background-repeat: repeat-x;
+}
+
+.progressive-dotted-line.visible {
+    width: 100%;
+}
+
+.progressive-dotted-line.visible::before {
+    animation: dashMove 3s linear infinite;
+}
+
+@keyframes dashMove {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 45px;
+    }
+}
+
+/* Hero section progressive line effect */
+.hero-dotted-line {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    width: 0%;
+    height: 8px;
+    background: transparent;
+    transform: translateX(-50%) translateY(-50%);
+    transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1;
+    will-change: width;
+}
+
+.hero-dotted-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-image: repeating-linear-gradient(
+        to right,
+        #594032 0px,
+        #594032 30px,
+        transparent 30px,
+        transparent 45px
+    );
+    background-size: 45px 8px;
+    background-repeat: repeat-x;
+}
+
+.hero-dotted-line.visible {
+    width: 400px;
+}
+
+.hero-dotted-line.visible::before {
+    animation: dashMove 3s linear infinite;
+}
+
+/* Section dotted lines behind text */
+.section-dotted-line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0%;
+    height: 8px;
+    background: transparent;
+    transform: translateY(-50%);
+    transition: width 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 0;
+    will-change: width;
+}
+
+.section-dotted-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-image: repeating-linear-gradient(
+        to right,
+        #594032 0px,
+        #594032 30px,
+        transparent 30px,
+        transparent 45px
+    );
+    background-size: 45px 8px;
+    background-repeat: repeat-x;
+    opacity: 0.7;
+}
+
+.section-dotted-line.visible {
+    width: 100%;
+}
+
+.section-dotted-line.visible::before {
+    animation: dashMove 4s linear infinite;
+}
+
+/* Responsive dotted line */
+@media (max-width: 768px) {
+    .hero-dotted-line,
+    .section-dotted-line,
+    .progressive-dotted-line {
+        height: 6px;
+    }
+    
+    .hero-dotted-line::before,
+    .section-dotted-line::before,
+    .progressive-dotted-line::before {
+        height: 6px;
+        background-size: 35px 6px;
+        background-image: repeating-linear-gradient(
+            to right,
+            #594032 0px,
+            #594032 25px,
+            transparent 25px,
+            transparent 35px
+        );
+    }
+    
+    .hero-dotted-line.visible {
+        width: 300px;
+    }
+}
+
+/* Reduced motion support for dotted lines */
+@media (prefers-reduced-motion: reduce) {
+    .hero-dotted-line::before,
+    .section-dotted-line::before,
+    .progressive-dotted-line::before {
+        animation: none;
+    }
+    
+    .hero-dotted-line,
+    .section-dotted-line,
+    .progressive-dotted-line {
+        transition: none;
+    }
+}
+
