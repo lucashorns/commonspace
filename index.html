@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commonspace Consulting - Professional Spatial Analysis & Design Solutions</title>
+    <meta name="description" content="Professional consulting services in spatial analysis, design, and community engagement. Expert GIS analysis, map making, and stakeholder engagement solutions.">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/parallax.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Mapbox GL JS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="page-background">
+        <img src="assets/images/background.png" alt="Background" class="background-img">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="assets/images/Logo.svg" alt="Commonspace" class="logo-img">
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <div class="topographic-layer layer-1"></div>
+            <div class="topographic-layer layer-2"></div>
+            <div class="topographic-layer layer-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <img src="assets/images/Logo.svg" alt="Commonspace" class="hero-logo">
+                <p class="hero-tagline"><span>ANALYSIS</span>  <span>ENGAGEMENT</span>  <span>DESIGN</span></p>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+        
+    </section>
+
+    <!-- Analysis Section -->
+    <section class="analysis">
+        <div class="container" style="pointer-events: none;">
+            <!-- Analysis content area -->
+        </div>
+        
+        <!-- First Vertical Line -->
+        <div class="vertical-line vertical-line-1-analysis" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 2vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 1; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <!-- Second Vertical Line -->
+        <div class="vertical-line vertical-line-2-analysis" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 8vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 1; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <!-- Third Vertical Line -->
+        <div class="vertical-line vertical-line-3-analysis" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 14vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 1; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <!-- Pin SVG -->
+        <img src="assets/images/light_pin.svg" alt="Pin" class="pin-icon-analysis" style="width: max(20px, 6vw); height: max(40px, 8vh); position: absolute; top: 20vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;">
+        
+        <!-- Additional Vertical Lines Below Pin -->
+        <div class="fixed-line fixed-line-1-analysis" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 30vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-2-analysis" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 36vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-3-analysis" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 42vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-4-analysis" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 48vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-5-analysis" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 54vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-6-analysis" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 60vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-7-analysis" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 66vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-8-analysis" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 72vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-9-analysis" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 78vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-10-analysis" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 84vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-11-analysis" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 90vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-12-analysis" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 96vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        
+        <!-- Mapbox Map -->
+        <div id="analysis-map" style="position: absolute; top: 30vh; left: 18vw; width: min(75vw, 800px); height: 80vh; z-index: 9999; opacity: 0; transition: opacity 0.8s ease; pointer-events: auto;"></div>
+        
+        <!-- Analysis Content -->
+        <div class="analysis-content" style="position: absolute; top: 20vh; left: 18vw; width: min(70vw, 500px); z-index: 10; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; pointer-events: none;">
+            <h2 class="analysis-title" style="font-family: 'Raleway', sans-serif; font-size: 2.5rem; font-weight: 700; color: #A6785D; margin-bottom: 1rem; line-height: 1.2; pointer-events: auto;">ANALYSIS</h2>
+        </div>
+    </section>
+
+    <!-- Engagement Section -->
+    <section class="engagement">
+        <div class="container" style="pointer-events: none;">
+            <!-- This is where we'll build the new content -->
+        </div>
+        
+        <!-- First Vertical Line -->
+        <div class="vertical-line vertical-line-1" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 2vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 1; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <!-- Second Vertical Line -->
+        <div class="vertical-line vertical-line-2" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 8vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 1; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <!-- Third Vertical Line -->
+        <div class="vertical-line vertical-line-3" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 14vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <!-- Pin SVG -->
+        <img src="assets/images/light_pin.svg" alt="Pin" class="pin-icon" style="width: max(20px, 6vw); height: max(40px, 8vh); position: absolute; top: 20vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;">
+        
+        <!-- Additional Vertical Lines Below Pin -->
+        <div class="fixed-line fixed-line-1" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 30vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-2" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 36vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-3" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 42vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-4" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 48vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-5" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 54vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-6" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 60vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-7" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 66vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-8" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 72vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-9" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 78vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-10" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 84vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-11" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 90vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        <div class="fixed-line fixed-line-12" style="width: min(1vw, 4px); height: min(4vh, 50px); background-color: #594032; position: absolute; top: 96vh; left: 12vw; transform: translateX(-50%); z-index: 10; opacity: 0; transition: opacity 0.2s ease; pointer-events: auto;"></div>
+        
+        
+            <!-- Engagement Content -->
+            <div class="engagement-content" style="position: absolute; top: min(20vh, 250px); left: 18vw; width: min(70vw, 400px); z-index: 10; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; pointer-events: none;">
+                <h2 class="engagement-title" style="font-family: 'Raleway', sans-serif; font-size: 2.5rem; font-weight: 700; color: #A6785D; margin-bottom: 1rem; line-height: 1.2; pointer-events: auto;">ENGAGEMENT</h2>
+            </div>
+        
+        <!-- Horn Click SVG -->
+        <img src="assets/images/horn_click.svg" alt="Horn Click" class="horn-icon" style="position: absolute; top: min(32vh, 400px); left: 18vw; width: max(8vw, 70px); height: auto; z-index: 10; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; pointer-events: auto; filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.3));">
+    </section>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/parallax.js"></script>
+</body>
+</html>
