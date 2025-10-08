@@ -43,21 +43,11 @@ function initNavigation() {
     // Navbar scroll effect
     if (navbar) {
         let lastScrollTop = 0;
-        
-        // Check if we're on About or Contact page
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        const isAboutOrContact = currentPage === 'about.html' || currentPage === 'contact.html';
-        
-        // If on About or Contact, make navbar visible immediately
-        if (isAboutOrContact) {
-            navbar.classList.add('visible');
-        }
-        
         window.addEventListener('scroll', function() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
-            // Show navbar when user starts scrolling (but keep always visible on About/Contact)
-            if (scrollTop > 0 || isAboutOrContact) {
+            // Show navbar when user starts scrolling
+            if (scrollTop > 0) {
                 navbar.classList.add('visible');
             } else {
                 navbar.classList.remove('visible');
@@ -145,11 +135,8 @@ function initAnimations() {
     // Horn wiggle animation
     initHornWiggle();
     
-    // Initialize Mapbox map only if map container exists
-    const mapContainer = document.getElementById('analysis-map');
-    if (mapContainer) {
-        initAnalysisMap();
-    }
+    // Initialize Mapbox map
+    initAnalysisMap();
     
     // Service section bold text animations
     initServiceTextAnimations();
@@ -188,10 +175,6 @@ function initVerticalLineFadeIn() {
     const engagementContent = document.querySelector('.engagement-content');
     const hornIcon = document.querySelector('.horn-icon');
     const engagementDescription = document.querySelector('.engagement-description');
-    const engagementBullet1 = document.querySelector('.engagement-bullet-1');
-    const engagementBullet2 = document.querySelector('.engagement-bullet-2');
-    const engagementBullet3 = document.querySelector('.engagement-bullet-3');
-    const engagementBullet4 = document.querySelector('.engagement-bullet-4');
     const fixedLine1 = document.querySelector('.fixed-line-1');
     const fixedLine2 = document.querySelector('.fixed-line-2');
     const fixedLine3 = document.querySelector('.fixed-line-3');
@@ -212,15 +195,9 @@ function initVerticalLineFadeIn() {
     const fixedLine18 = document.querySelector('.fixed-line-18');
     const fixedLine19 = document.querySelector('.fixed-line-19');
     const fixedLine20 = document.querySelector('.fixed-line-20');
-    const fixedLine21 = document.querySelector('.fixed-line-21');
-    const fixedLine22 = document.querySelector('.fixed-line-22');
-    const fixedLine23 = document.querySelector('.fixed-line-23');
-    const fixedLine24 = document.querySelector('.fixed-line-24');
-    const fixedLine25 = document.querySelector('.fixed-line-25');
-    const fixedLine26 = document.querySelector('.fixed-line-26');
     const blankSection = document.querySelector('.engagement');
     
-    if (!verticalLine1 || !verticalLine2 || !verticalLine3 || !pinIcon || !engagementContent || !hornIcon || !engagementDescription || !fixedLine1 || !fixedLine2 || !fixedLine3 || !fixedLine4 || !fixedLine5 || !fixedLine6 || !fixedLine7 || !fixedLine8 || !fixedLine9 || !fixedLine10 || !fixedLine11 || !fixedLine12 || !fixedLine13 || !fixedLine14 || !fixedLine15 || !fixedLine16 || !fixedLine17 || !fixedLine18 || !fixedLine19 || !fixedLine20 || !fixedLine21 || !fixedLine22 || !fixedLine23 || !fixedLine24 || !fixedLine25 || !fixedLine26 || !blankSection) return;
+    if (!verticalLine1 || !verticalLine2 || !verticalLine3 || !pinIcon || !engagementContent || !hornIcon || !engagementDescription || !fixedLine1 || !fixedLine2 || !fixedLine3 || !fixedLine4 || !fixedLine5 || !fixedLine6 || !fixedLine7 || !fixedLine8 || !fixedLine9 || !fixedLine10 || !fixedLine11 || !fixedLine12 || !fixedLine13 || !fixedLine14 || !fixedLine15 || !fixedLine16 || !fixedLine17 || !fixedLine18 || !fixedLine19 || !fixedLine20 || !blankSection) return;
     
     // Show the lines when user scrolls into the blank section
     window.addEventListener('scroll', function() {
@@ -284,63 +261,6 @@ function initVerticalLineFadeIn() {
         } else {
             engagementDescription.style.opacity = '0';
             engagementDescription.style.transform = 'translateY(30px)';
-        }
-        
-        // Bullet points fly in from bottom one after another when scrolling past 150vh
-        if (distanceFromBottom < -vhToPx(150)) {
-            if (engagementBullet1) {
-                setTimeout(() => {
-                    engagementBullet1.style.opacity = '1';
-                    engagementBullet1.style.transform = 'translateY(0)';
-                }, 0);
-            }
-        } else {
-            if (engagementBullet1) {
-                engagementBullet1.style.opacity = '0';
-                engagementBullet1.style.transform = 'translateY(30px)';
-            }
-        }
-        
-        if (distanceFromBottom < -vhToPx(150)) {
-            if (engagementBullet2) {
-                setTimeout(() => {
-                    engagementBullet2.style.opacity = '1';
-                    engagementBullet2.style.transform = 'translateY(0)';
-                }, 150);
-            }
-        } else {
-            if (engagementBullet2) {
-                engagementBullet2.style.opacity = '0';
-                engagementBullet2.style.transform = 'translateY(30px)';
-            }
-        }
-        
-        if (distanceFromBottom < -vhToPx(150)) {
-            if (engagementBullet3) {
-                setTimeout(() => {
-                    engagementBullet3.style.opacity = '1';
-                    engagementBullet3.style.transform = 'translateY(0)';
-                }, 300);
-            }
-        } else {
-            if (engagementBullet3) {
-                engagementBullet3.style.opacity = '0';
-                engagementBullet3.style.transform = 'translateY(30px)';
-            }
-        }
-        
-        if (distanceFromBottom < -vhToPx(150)) {
-            if (engagementBullet4) {
-                setTimeout(() => {
-                    engagementBullet4.style.opacity = '1';
-                    engagementBullet4.style.transform = 'translateY(0)';
-                }, 450);
-            }
-        } else {
-            if (engagementBullet4) {
-                engagementBullet4.style.opacity = '0';
-                engagementBullet4.style.transform = 'translateY(30px)';
-            }
         }
         
         
@@ -476,42 +396,6 @@ function initVerticalLineFadeIn() {
         } else {
             fixedLine20.style.opacity = '0';
         }
-
-        if (distanceFromBottom < -vhToPx(166)) {
-            fixedLine21.style.opacity = '1';
-        } else {
-            fixedLine21.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(172)) {
-            fixedLine22.style.opacity = '1';
-        } else {
-            fixedLine22.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(178)) {
-            fixedLine23.style.opacity = '1';
-        } else {
-            fixedLine23.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(184)) {
-            fixedLine24.style.opacity = '1';
-        } else {
-            fixedLine24.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(190)) {
-            fixedLine25.style.opacity = '1';
-        } else {
-            fixedLine25.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(196)) {
-            fixedLine26.style.opacity = '1';
-        } else {
-            fixedLine26.style.opacity = '0';
-        }
     });
 }
 
@@ -523,11 +407,6 @@ function initDesignLineFadeIn() {
     const pinIconDesign = document.querySelector('.pin-icon-design');
     const designContent = document.querySelector('.design-content');
     const designPageContainer = document.querySelector('.design-page-container');
-    const designDescription = document.querySelector('.design-description');
-    const designBullet1 = document.querySelector('.design-bullet-1');
-    const designBullet2 = document.querySelector('.design-bullet-2');
-    const designBullet3 = document.querySelector('.design-bullet-3');
-    const designBullet4 = document.querySelector('.design-bullet-4');
     const designImageBack = document.querySelector('.design-image-back');
     const fixedLine1Design = document.querySelector('.fixed-line-1-design');
     const fixedLine2Design = document.querySelector('.fixed-line-2-design');
@@ -549,112 +428,12 @@ function initDesignLineFadeIn() {
     const fixedLine18Design = document.querySelector('.fixed-line-18-design');
     const fixedLine19Design = document.querySelector('.fixed-line-19-design');
     const fixedLine20Design = document.querySelector('.fixed-line-20-design');
-    const fixedLine21Design = document.querySelector('.fixed-line-21-design');
-    const fixedLine22Design = document.querySelector('.fixed-line-22-design');
-    const fixedLine23Design = document.querySelector('.fixed-line-23-design');
-    const fixedLine24Design = document.querySelector('.fixed-line-24-design');
-    const fixedLine25Design = document.querySelector('.fixed-line-25-design');
-    const fixedLine26Design = document.querySelector('.fixed-line-26-design');
     const designSection = document.querySelector('.design');
     
-    if (!verticalLine1Design || !verticalLine2Design || !verticalLine3Design || !pinIconDesign || !designContent || !designPageContainer || !designDescription || !designImageBack || !fixedLine1Design || !fixedLine2Design || !fixedLine3Design || !fixedLine4Design || !fixedLine5Design || !fixedLine6Design || !fixedLine7Design || !fixedLine8Design || !fixedLine9Design || !fixedLine10Design || !fixedLine11Design || !fixedLine12Design || !fixedLine13Design || !fixedLine14Design || !fixedLine15Design || !fixedLine16Design || !fixedLine17Design || !fixedLine18Design || !fixedLine19Design || !fixedLine20Design || !fixedLine21Design || !fixedLine22Design || !fixedLine23Design || !fixedLine24Design || !fixedLine25Design || !fixedLine26Design || !designSection) return;
+    if (!verticalLine1Design || !verticalLine2Design || !verticalLine3Design || !pinIconDesign || !designContent || !designPageContainer || !designImageBack || !fixedLine1Design || !fixedLine2Design || !fixedLine3Design || !fixedLine4Design || !fixedLine5Design || !fixedLine6Design || !fixedLine7Design || !fixedLine8Design || !fixedLine9Design || !fixedLine10Design || !fixedLine11Design || !fixedLine12Design || !fixedLine13Design || !fixedLine14Design || !fixedLine15Design || !fixedLine16Design || !fixedLine17Design || !fixedLine18Design || !fixedLine19Design || !fixedLine20Design || !designSection) return;
     
     // Book opening state - persistent across scroll events
     let isBookOpen = false;
-    let animationInterval = null;
-    let isAnimating = false;
-    
-    // Function to create partial book opening animation (10% opening)
-    function animatePartialBookOpening() {
-        if (isBookOpen || isAnimating) return;
-        
-        isAnimating = true;
-        const bookPagesContainer = designPageContainer.querySelector('.book-pages-container');
-        const frontImage = designPageContainer.querySelector('.design-image-front');
-        
-        // Small movement and scale for 10% opening effect
-        const smallScale = 1.05; // 5% scale increase
-        const smallTranslateX = window.innerWidth < 500 ? '5px' : '10px';
-        
-        // Apply partial opening
-        bookPagesContainer.style.transform = `scale(${smallScale}) translateX(${smallTranslateX})`;
-        bookPagesContainer.style.transition = 'transform 0.8s ease-in-out';
-        
-        // Slight rotation of front page (10% of full rotation)
-        frontImage.style.transformOrigin = 'left center';
-        frontImage.style.transform = 'rotate(-3deg) rotateY(-18deg)'; // 10% of -180deg
-        frontImage.style.transition = 'transform 0.8s ease-in-out';
-        
-        // Close after 1.5 seconds
-        setTimeout(function() {
-            if (!isBookOpen) { // Only close if user hasn't clicked
-                bookPagesContainer.style.transform = 'scale(1) translateX(0px)';
-                frontImage.style.transform = 'rotate(-3deg) rotateY(0deg)';
-                
-                // Reset animation flag after closing
-                setTimeout(function() {
-                    isAnimating = false;
-                }, 800);
-            }
-        }, 1500);
-    }
-    
-    // Function to start the automatic animation
-    function startBookAnimation() {
-        if (animationInterval) return; // Already running
-        
-        // Start animation immediately, then every 2 seconds
-        animatePartialBookOpening();
-        animationInterval = setInterval(animatePartialBookOpening, 2000);
-    }
-    
-    // Function to stop the automatic animation
-    function stopBookAnimation() {
-        if (animationInterval) {
-            clearInterval(animationInterval);
-            animationInterval = null;
-        }
-        isAnimating = false;
-    }
-    
-    // Function to handle hover animation
-    function handleHoverAnimation() {
-        if (isBookOpen || isAnimating) return;
-        
-        isAnimating = true;
-        const bookPagesContainer = designPageContainer.querySelector('.book-pages-container');
-        const frontImage = designPageContainer.querySelector('.design-image-front');
-        
-        // Small movement and scale for 10% opening effect
-        const smallScale = 1.05; // 5% scale increase
-        const smallTranslateX = window.innerWidth < 500 ? '5px' : '10px';
-        
-        // Apply partial opening
-        bookPagesContainer.style.transform = `scale(${smallScale}) translateX(${smallTranslateX})`;
-        bookPagesContainer.style.transition = 'transform 0.3s ease-in-out';
-        
-        // Slight rotation of front page (10% of full rotation)
-        frontImage.style.transformOrigin = 'left center';
-        frontImage.style.transform = 'rotate(-3deg) rotateY(-18deg)'; // 10% of -180deg
-        frontImage.style.transition = 'transform 0.3s ease-in-out';
-    }
-    
-    // Function to handle hover out animation
-    function handleHoverOutAnimation() {
-        if (isBookOpen || !isAnimating) return;
-        
-        const bookPagesContainer = designPageContainer.querySelector('.book-pages-container');
-        const frontImage = designPageContainer.querySelector('.design-image-front');
-        
-        // Reset to original position
-        bookPagesContainer.style.transform = 'scale(1) translateX(0px)';
-        frontImage.style.transform = 'rotate(-3deg) rotateY(0deg)';
-        
-        // Reset animation flag after transition
-        setTimeout(function() {
-            isAnimating = false;
-        }, 300);
-    }
     
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -712,88 +491,15 @@ function initDesignLineFadeIn() {
                 if (bookPagesContainer) {
                     bookPagesContainer.style.height = '20vh';
                 }
-                // Start the automatic animation when book becomes visible
-                startBookAnimation();
             }
-            // Only control back image opacity if book is not open
-            if (!isBookOpen) {
-                designImageBack.style.opacity = '1';
-            }
+            designImageBack.style.opacity = '1';
         } else {
-            // Only fade out container if book is not open
+            designPageContainer.style.opacity = '0';
+            // Don't reset transform if book is open
             if (!isBookOpen) {
-                designPageContainer.style.opacity = '0';
                 designPageContainer.style.transform = 'translateY(30px)';
-                designImageBack.style.opacity = '0';
-                // Stop the automatic animation when book goes out of view
-                stopBookAnimation();
             }
-        }
-        
-        // Design description fades in after the page container when bottom of viewport is 1vh before the design section
-        if (distanceFromBottom < -vhToPx(100)) {
-            designDescription.style.opacity = '1';
-            designDescription.style.transform = 'translateY(0px)';
-        } else {
-            designDescription.style.opacity = '0';
-            designDescription.style.transform = 'translateY(30px)';
-        }
-        
-        // Bullet points fly in from bottom one after another when scrolling past 150vh
-        if (distanceFromBottom < -vhToPx(111)) {
-            if (designBullet1) {
-                setTimeout(() => {
-                    designBullet1.style.opacity = '1';
-                    designBullet1.style.transform = 'translateY(0)';
-                }, 0);
-            }
-        } else {
-            if (designBullet1) {
-                designBullet1.style.opacity = '0';
-                designBullet1.style.transform = 'translateY(30px)';
-            }
-        }
-        
-        if (distanceFromBottom < -vhToPx(111)) {
-            if (designBullet2) {
-                setTimeout(() => {
-                    designBullet2.style.opacity = '1';
-                    designBullet2.style.transform = 'translateY(0)';
-                }, 150);
-            }
-        } else {
-            if (designBullet2) {
-                designBullet2.style.opacity = '0';
-                designBullet2.style.transform = 'translateY(30px)';
-            }
-        }
-        
-        if (distanceFromBottom < -vhToPx(111)) {
-            if (designBullet3) {
-                setTimeout(() => {
-                    designBullet3.style.opacity = '1';
-                    designBullet3.style.transform = 'translateY(0)';
-                }, 300);
-            }
-        } else {
-            if (designBullet3) {
-                designBullet3.style.opacity = '0';
-                designBullet3.style.transform = 'translateY(30px)';
-            }
-        }
-        
-        if (distanceFromBottom < -vhToPx(111)) {
-            if (designBullet4) {
-                setTimeout(() => {
-                    designBullet4.style.opacity = '1';
-                    designBullet4.style.transform = 'translateY(0)';
-                }, 450);
-            }
-        } else {
-            if (designBullet4) {
-                designBullet4.style.opacity = '0';
-                designBullet4.style.transform = 'translateY(30px)';
-            }
+            designImageBack.style.opacity = '0';
         }
         
         // Fixed lines appear based on distance from bottom of viewport to design section
@@ -929,54 +635,11 @@ function initDesignLineFadeIn() {
         } else {
             fixedLine20Design.style.opacity = '0';
         }
-
-        if (distanceFromBottom < -vhToPx(166)) {
-            fixedLine21Design.style.opacity = '1';
-        } else {
-            fixedLine21Design.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(172)) {
-            fixedLine22Design.style.opacity = '1';
-        } else {
-            fixedLine22Design.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(178)) {
-            fixedLine23Design.style.opacity = '1';
-        } else {
-            fixedLine23Design.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(184)) {
-            fixedLine24Design.style.opacity = '1';
-        } else {
-            fixedLine24Design.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(190)) {
-            fixedLine25Design.style.opacity = '1';
-        } else {
-            fixedLine25Design.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(196)) {
-            fixedLine26Design.style.opacity = '1';
-        } else {
-            fixedLine26Design.style.opacity = '0';
-        }
     });
     
-        // Hover event listeners for interactive animation
-        designPageContainer.addEventListener('mouseenter', handleHoverAnimation);
-        designPageContainer.addEventListener('mouseleave', handleHoverOutAnimation);
-        
         // Book opening animation on click
         designPageContainer.addEventListener('click', function() {
             if (!isBookOpen) {
-                // Stop the automatic animation when user clicks
-                stopBookAnimation();
-                
                 const bookPagesContainer = designPageContainer.querySelector('.book-pages-container');
                 const frontImage = designPageContainer.querySelector('.design-image-front');
                 
@@ -987,7 +650,7 @@ function initDesignLineFadeIn() {
                 // Set height to 30vh and scale/move the book pages container
                 bookPagesContainer.style.height = '30vh';
                 bookPagesContainer.style.transformOrigin = 'left center';
-                bookPagesContainer.style.transform = window.innerWidth < 500 ? 'scale(1.5) translateX(75px)' : 'scale(1.5) translateX(100px)';
+                bookPagesContainer.style.transform = 'scale(1.5) translateX(100px)';
                 bookPagesContainer.style.transition = 'transform 1.5s ease-in-out, height 1.5s ease-in-out';
                 
                 // Flip the front page to the left
@@ -995,11 +658,11 @@ function initDesignLineFadeIn() {
                 frontImage.style.transform = 'rotate(-3deg) rotateY(-180deg)';
                 frontImage.style.transition = 'transform 1.5s ease-in-out';
                 
-                // Change the front page image to Page-8.svg at the halfway point of the flip
+                // Change the front page image to Page-03_1.svg at the halfway point of the flip
                 setTimeout(function() {
-                    frontImage.src = 'assets/images/Page-8.png';
-                    frontImage.style.top = window.innerWidth < 500 ? '6.2px' : '-1px';
-                    frontImage.style.left = window.innerWidth < 500 ? '11px' : '10.5px';
+                    frontImage.src = 'assets/images/Page-03_1.svg';
+                    frontImage.style.top = '7px';
+                    frontImage.style.left = '16px';
                 }, 750); // Change at 0.75s (halfway through the 1.5s flip)
                 
                 // Make Page-02 visible after the flip completes
@@ -1264,7 +927,7 @@ function initHornWiggle() {
         hornTypewriterEl.style.opacity = '1';
         
         // Start typewriter effect
-        const text = "Bring your community into the planning process.";
+        const text = "Bring stakeholders together through thoughtful, sincere engagement.";
         typeWriter(text, hornTypewriterEl, 25);
     });
 }
@@ -1278,10 +941,6 @@ function initAnalysisLineFadeIn() {
     const analysisContent = document.querySelector('.analysis-content');
     const analysisMap = document.getElementById('analysis-map');
     const analysisDescription = document.querySelector('.analysis-description');
-    const analysisBullet1 = document.querySelector('.analysis-bullet-1');
-    const analysisBullet2 = document.querySelector('.analysis-bullet-2');
-    const analysisBullet3 = document.querySelector('.analysis-bullet-3');
-    const analysisBullet4 = document.querySelector('.analysis-bullet-4');
     const fixedLine1Analysis = document.querySelector('.fixed-line-1-analysis');
     const fixedLine2Analysis = document.querySelector('.fixed-line-2-analysis');
     const fixedLine3Analysis = document.querySelector('.fixed-line-3-analysis');
@@ -1302,19 +961,9 @@ function initAnalysisLineFadeIn() {
     const fixedLine18Analysis = document.querySelector('.fixed-line-18-analysis');
     const fixedLine19Analysis = document.querySelector('.fixed-line-19-analysis');
     const fixedLine20Analysis = document.querySelector('.fixed-line-20-analysis');
-    const fixedLine21Analysis = document.querySelector('.fixed-line-21-analysis');
-    const fixedLine22Analysis = document.querySelector('.fixed-line-22-analysis');
-    const fixedLine23Analysis = document.querySelector('.fixed-line-23-analysis');
-    const fixedLine24Analysis = document.querySelector('.fixed-line-24-analysis');
-    const fixedLine25Analysis = document.querySelector('.fixed-line-25-analysis');
-    const fixedLine26Analysis = document.querySelector('.fixed-line-26-analysis');
-    const fixedLine27Analysis = document.querySelector('.fixed-line-27-analysis');
-    const fixedLine28Analysis = document.querySelector('.fixed-line-28-analysis');
-    const fixedLine29Analysis = document.querySelector('.fixed-line-29-analysis');
-    const fixedLine30Analysis = document.querySelector('.fixed-line-30-analysis');
     const analysisSection = document.querySelector('.analysis');
     
-    if (!verticalLine1Analysis || !verticalLine2Analysis || !verticalLine3Analysis || !pinIconAnalysis || !analysisContent || !analysisMap || !analysisDescription || !fixedLine1Analysis || !fixedLine2Analysis || !fixedLine3Analysis || !fixedLine4Analysis || !fixedLine5Analysis || !fixedLine6Analysis || !fixedLine7Analysis || !fixedLine8Analysis || !fixedLine9Analysis || !fixedLine10Analysis || !fixedLine11Analysis || !fixedLine12Analysis || !fixedLine13Analysis || !fixedLine14Analysis || !fixedLine15Analysis || !fixedLine16Analysis || !fixedLine17Analysis || !fixedLine18Analysis || !fixedLine19Analysis || !fixedLine20Analysis || !fixedLine21Analysis || !fixedLine22Analysis || !fixedLine23Analysis || !fixedLine24Analysis || !fixedLine25Analysis || !fixedLine26Analysis || !fixedLine27Analysis || !fixedLine28Analysis || !fixedLine29Analysis || !fixedLine30Analysis || !analysisSection) return;
+    if (!verticalLine1Analysis || !verticalLine2Analysis || !verticalLine3Analysis || !pinIconAnalysis || !analysisContent || !analysisMap || !analysisDescription || !fixedLine1Analysis || !fixedLine2Analysis || !fixedLine3Analysis || !fixedLine4Analysis || !fixedLine5Analysis || !fixedLine6Analysis || !fixedLine7Analysis || !fixedLine8Analysis || !fixedLine9Analysis || !fixedLine10Analysis || !fixedLine11Analysis || !fixedLine12Analysis || !fixedLine13Analysis || !fixedLine14Analysis || !fixedLine15Analysis || !fixedLine16Analysis || !fixedLine17Analysis || !fixedLine18Analysis || !fixedLine19Analysis || !fixedLine20Analysis || !analysisSection) return;
     
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -1376,63 +1025,6 @@ function initAnalysisLineFadeIn() {
         } else {
             analysisDescription.style.opacity = '0';
             analysisDescription.style.transform = 'translateY(30px)';
-        }
-        
-        // Bullet points fly in from bottom one after another when scrolling past 150vh
-        if (distanceFromBottom < -vhToPx(150)) {
-            if (analysisBullet1) {
-                setTimeout(() => {
-                    analysisBullet1.style.opacity = '1';
-                    analysisBullet1.style.transform = 'translateY(0)';
-                }, 0);
-            }
-        } else {
-            if (analysisBullet1) {
-                analysisBullet1.style.opacity = '0';
-                analysisBullet1.style.transform = 'translateY(30px)';
-            }
-        }
-        
-        if (distanceFromBottom < -vhToPx(150)) {
-            if (analysisBullet2) {
-                setTimeout(() => {
-                    analysisBullet2.style.opacity = '1';
-                    analysisBullet2.style.transform = 'translateY(0)';
-                }, 150);
-            }
-        } else {
-            if (analysisBullet2) {
-                analysisBullet2.style.opacity = '0';
-                analysisBullet2.style.transform = 'translateY(30px)';
-            }
-        }
-        
-        if (distanceFromBottom < -vhToPx(150)) {
-            if (analysisBullet3) {
-                setTimeout(() => {
-                    analysisBullet3.style.opacity = '1';
-                    analysisBullet3.style.transform = 'translateY(0)';
-                }, 300);
-            }
-        } else {
-            if (analysisBullet3) {
-                analysisBullet3.style.opacity = '0';
-                analysisBullet3.style.transform = 'translateY(30px)';
-            }
-        }
-        
-        if (distanceFromBottom < -vhToPx(150)) {
-            if (analysisBullet4) {
-                setTimeout(() => {
-                    analysisBullet4.style.opacity = '1';
-                    analysisBullet4.style.transform = 'translateY(0)';
-                }, 450);
-            }
-        } else {
-            if (analysisBullet4) {
-                analysisBullet4.style.opacity = '0';
-                analysisBullet4.style.transform = 'translateY(30px)';
-            }
         }
         
         // Fixed lines appear based on distance from bottom of viewport to analysis section
@@ -1568,77 +1160,11 @@ function initAnalysisLineFadeIn() {
         } else {
             fixedLine20Analysis.style.opacity = '0';
         }
-
-        if (distanceFromBottom < -vhToPx(166)) {
-            fixedLine21Analysis.style.opacity = '1';
-        } else {
-            fixedLine21Analysis.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(172)) {
-            fixedLine22Analysis.style.opacity = '1';
-        } else {
-            fixedLine22Analysis.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(178)) {
-            fixedLine23Analysis.style.opacity = '1';
-        } else {
-            fixedLine23Analysis.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(184)) {
-            fixedLine24Analysis.style.opacity = '1';
-        } else {
-            fixedLine24Analysis.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(190)) {
-            fixedLine25Analysis.style.opacity = '1';
-        } else {
-            fixedLine25Analysis.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(196)) {
-            fixedLine26Analysis.style.opacity = '1';
-        } else {
-            fixedLine26Analysis.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(202)) {
-            fixedLine27Analysis.style.opacity = '1';
-        } else {
-            fixedLine27Analysis.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(208)) {
-            fixedLine28Analysis.style.opacity = '1';
-        } else {
-            fixedLine28Analysis.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(214)) {
-            fixedLine29Analysis.style.opacity = '1';
-        } else {
-            fixedLine29Analysis.style.opacity = '0';
-        }
-
-        if (distanceFromBottom < -vhToPx(220)) {
-            fixedLine30Analysis.style.opacity = '1';
-        } else {
-            fixedLine30Analysis.style.opacity = '0';
-        }
     });
 }
 
 // ===== MAPBOX MAP INITIALIZATION =====
 function initAnalysisMap() {
-    // Check if mapboxgl is available
-    if (typeof mapboxgl === 'undefined') {
-        console.warn('Mapbox GL JS not loaded. Skipping map initialization.');
-        return;
-    }
-    
     // Set Mapbox access token
     mapboxgl.accessToken = 'pk.eyJ1IjoibHVjYXNob3JucyIsImEiOiJjbTZ6ZGtweWMwM2RzMnFvbWJ2NGVoNjU1In0.dU3kPMeYYDdlAowT1VonWQ';
     
@@ -1700,33 +1226,22 @@ function initAnalysisMap() {
     // Track hover state to control label visibility
     let isHovering = false;
     
-    // Hover effects (grow from bottom) - only when zoom <= 7
+    // Hover effects (grow from bottom)
     el.addEventListener('mouseenter', function() {
-        // Only show hover effects if zoom level is 7 or below
-        if (map.getZoom() <= 7) {
-            isHovering = true;
-            pinImg.style.transform = 'scale(1.15)';
-            label.style.opacity = '0';
-        }
+        isHovering = true;
+        pinImg.style.transform = 'scale(1.15)';
+        label.style.opacity = '0';
     });
     
     el.addEventListener('mouseleave', function() {
-        // Only reset hover effects if zoom level is 7 or below
-        if (map.getZoom() <= 7) {
-            isHovering = false;
-            pinImg.style.transform = 'scale(1)';
-            // Don't set label opacity here - let pulse animation control it
-        }
+        isHovering = false;
+        pinImg.style.transform = 'scale(1)';
+        // Don't set label opacity here - let pulse animation control it
     });
     
     // Click to zoom to polygon - fit bounds to show entire polygon
     el.addEventListener('click', function(e) {
         e.stopPropagation(); // Prevent click from reaching the map/polygon
-        
-        // Only allow click if zoom level is 7 or below
-        if (map.getZoom() > 7) {
-            return;
-        }
         
         // Define bounds for the polygon (adjust these based on your actual polygon extent)
         // These bounds encompass the Salt Lake County area
@@ -1764,10 +1279,8 @@ function initAnalysisMap() {
         if (currentZoom > 7) {
             pinImg.style.opacity = '0';
             label.style.opacity = '0';
-            pinImg.style.cursor = 'grab'; // Remove pointer cursor when zoomed in
         } else {
             pinImg.style.opacity = '1';
-            pinImg.style.cursor = 'pointer'; // Restore pointer cursor when zoomed out
             // Hide label after zoom 7.5, but let pulse control it before that
             if (currentZoom > 7.5) {
                 label.style.opacity = '0';
@@ -1829,7 +1342,13 @@ function initAnalysisMap() {
             'source-layer': 'SLCo-2lit8f',
             paint: {
                 'fill-color': '#A6785D', // Static primary brown (no hover effect)
-                'fill-opacity': 0
+                'fill-opacity': [
+                    'interpolate',
+                    ['linear'],
+                    ['zoom'],
+                    7, 0,
+                    8, 0.6
+                ]
             }
         });
         
@@ -1842,99 +1361,13 @@ function initAnalysisMap() {
             paint: {
                 'line-color': '#594032',
                 'line-width': 2,
-                'line-opacity': 0
-            }
-        });
-
-        // Add the zip codes tileset source
-        map.addSource('selected-zips', {
-            type: 'vector',
-            url: 'mapbox://lucashorns.244g5jqj'
-        });
-        
-        // Add zip codes fill layer (visible after zoom 7)
-        map.addLayer({
-            id: 'zips-fill',
-            type: 'fill',
-            source: 'selected-zips',
-            'source-layer': 'SelectedZips-79nj43',
-            paint: {
-                'fill-color': ['get', 'Color'], // Get color from the Color field
-                'fill-opacity': [
-                    'interpolate',
-                    ['linear'],
-                    ['zoom'],
-                    7, 0,      // Invisible at zoom 7
-                    7.5, 0.6   // 60% opacity at zoom 7.5 and above
-                ]
-            }
-        });
-        
-        // Add zip codes outline layer (visible after zoom 7)
-        map.addLayer({
-            id: 'zips-outline',
-            type: 'line',
-            source: 'selected-zips',
-            'source-layer': 'SelectedZips-79nj43',
-            paint: {
-                'line-color': '#A6785D',
-                'line-width': 0.25,
                 'line-opacity': [
                     'interpolate',
                     ['linear'],
                     ['zoom'],
-                    7, 0,   // Invisible at zoom 7
-                    7.5, 1  // Fully visible at zoom 7.5 and above
+                    7, 0,
+                    8, 1
                 ]
-            }
-        });
-        
-        // Add hover layer (initially invisible)
-        map.addLayer({
-            id: 'zips-hover',
-            type: 'fill',
-            source: 'selected-zips',
-            'source-layer': 'SelectedZips-79nj43',
-            paint: {
-                'fill-color': ['get', 'Color'],
-                'fill-opacity': [
-                    'interpolate',
-                    ['linear'],
-                    ['zoom'],
-                    7, 0,   // Invisible at zoom 7
-                    7.5, 1  // Fully visible at zoom 7.5 and above
-                ]
-            },
-            filter: ['==', ['get', 'OBJECTID'], ''] // Initially no features shown
-        });
-        
-        // Hover effect with opacity change
-        let hoveredFeature = null;
-        
-        // Hover effect - opacity change only, no cursor change
-        
-        map.on('mousemove', 'zips-fill', function(e) {
-            if (e.features.length > 0) {
-                const currentFeature = e.features[0];
-                
-                // Only update if we're hovering over a different feature
-                if (hoveredFeature !== currentFeature.properties.OBJECTID) {
-                    // Remove previous hover
-                    if (hoveredFeature !== null) {
-                        map.setFilter('zips-hover', ['!=', ['get', 'OBJECTID'], hoveredFeature]);
-                    }
-                    
-                    // Set new hover
-                    hoveredFeature = currentFeature.properties.OBJECTID;
-                    map.setFilter('zips-hover', ['==', ['get', 'OBJECTID'], hoveredFeature]);
-                }
-            }
-        });
-        
-        map.on('mouseleave', 'zips-fill', function() {
-            if (hoveredFeature !== null) {
-                map.setFilter('zips-hover', ['==', ['get', 'OBJECTID'], '']); // Hide all
-                hoveredFeature = null;
             }
         });
         
@@ -1987,7 +1420,7 @@ function initAnalysisMap() {
         }
         
         // Store typewriter text for use in pin click
-        window.typewriterText = "Turn complex data into clear insight";
+        window.typewriterText = "Use data to tell the story of any place.";
         window.typewriterEl = typewriterEl;
         window.typeWriter = typeWriter;
         window.isTextVisible = false;

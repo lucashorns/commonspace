@@ -8,7 +8,6 @@
     
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/parallax.css">
     <link rel="stylesheet" href="css/responsive.css">
     
     <!-- Fonts -->
@@ -28,7 +27,6 @@
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
-                <a href="projects.html" class="nav-link">Projects</a>
                 <a href="contact.html" class="nav-link active">Contact</a>
             </div>
             <div class="nav-toggle" id="nav-toggle">
@@ -39,262 +37,30 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="header-background">
-            <div class="topographic-layer layer-1"></div>
-            <div class="topographic-layer layer-2"></div>
-        </div>
-        <div class="container">
-            <div class="header-content">
-                <h1 class="page-title">Contact</h1>
-                <p class="page-subtitle">Let's discuss your project and how we can help</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section class="contact-section">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2 class="contact-title">Get In Touch</h2>
-                    <p class="contact-description">
-                        Ready to start your project? We'd love to hear from you. 
-                        Send us a message and we'll respond within 24 hours.
-                    </p>
+        <div class="container" style="max-width: 3000px;">
+            <div class="contact-content" style="display: block;">
+                <div class="contact-info" style="max-width: none; width: 100%;">
+                    <h2 class="contact-title" style="font-family: 'Raleway', sans-serif; color: #A6785D;">Get In Touch</h2>
                     
-                    <div class="contact-details">
-                        <div class="contact-detail">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="contact-text">
-                                <h3>Email</h3>
-                                <p><a href="mailto:info@commonspace.com">info@commonspace.com</a></p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-detail">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.18999 12.85C3.49997 10.2412 2.44824 7.271 2.11999 4.18C2.095 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30379 2.17052C3.55777 2.05833 3.83233 2.00026 4.10999 2H7.10999C7.59531 1.99522 8.06679 2.16708 8.43376 2.48353C8.80073 2.79999 9.03996 3.23945 9.10999 3.72C9.23662 4.68007 9.47144 5.62273 9.80999 6.53C9.94454 6.88792 9.97366 7.27691 9.89391 7.65088C9.81415 8.02485 9.62886 8.36811 9.35999 8.64L8.08999 9.91C9.51355 12.4135 11.5865 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9751 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="contact-text">
-                                <h3>Phone</h3>
-                                <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-detail">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.3639 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="contact-text">
-                                <h3>Location</h3>
-                                <p>San Francisco Bay Area<br>California, USA</p>
-                            </div>
-                        </div>
+                    <div style="margin: 30px 0; color: #594032; line-height: 1.8;">
+                        <div style="font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 1.3em;">Lucas Horns</div>
+                        <div style="font-family: 'Avenir', 'Avenir Next', sans-serif; font-weight: 700;">801.512.3983</div>
+                        <div style="font-family: 'Raleway', sans-serif; font-weight: 700;">Lucas@CommonspaceConsulting.com</div>
                     </div>
                     
-                    <div class="contact-hours">
-                        <h3>Business Hours</h3>
-                        <div class="hours-list">
-                            <div class="hours-item">
-                                <span class="day">Monday - Friday</span>
-                                <span class="time">9:00 AM - 6:00 PM PST</span>
-                            </div>
-                            <div class="hours-item">
-                                <span class="day">Saturday</span>
-                                <span class="time">10:00 AM - 4:00 PM PST</span>
-                            </div>
-                            <div class="hours-item">
-                                <span class="day">Sunday</span>
-                                <span class="time">Closed</span>
-                            </div>
-                        </div>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: left;">
+                        <a href="tel:+18015123983" class="btn btn-primary btn-large" style="font-family: 'Avenir', 'Avenir Next', sans-serif;">Call</a>
+                        <a href="mailto:lucas@commonspaceconsulting.com" class="btn btn-primary btn-large">Email</a>
+                        <a href="contact.vcf" class="btn btn-primary btn-large" download>Add Contact</a>
                     </div>
-                </div>
-                
-                <div class="contact-form-container">
-                    <form class="contact-form" id="contact-form">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Full Name *</label>
-                            <input type="text" id="name" name="name" class="form-input" required>
-                            <span class="form-error" id="name-error"></span>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email Address *</label>
-                            <input type="email" id="email" name="email" class="form-input" required>
-                            <span class="form-error" id="email-error"></span>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-input">
-                            <span class="form-error" id="phone-error"></span>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company" class="form-label">Company/Organization</label>
-                            <input type="text" id="company" name="company" class="form-input">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service" class="form-label">Service Interest *</label>
-                            <select id="service" name="service" class="form-select" required>
-                                <option value="">Select a service</option>
-                                <option value="spatial-analysis">Spatial Analysis & GIS</option>
-                                <option value="design">Design & Visual Communications</option>
-                                <option value="community-engagement">Community Engagement</option>
-                                <option value="multiple">Multiple Services</option>
-                                <option value="consultation">General Consultation</option>
-                            </select>
-                            <span class="form-error" id="service-error"></span>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="budget" class="form-label">Project Budget</label>
-                            <select id="budget" name="budget" class="form-select">
-                                <option value="">Select budget range</option>
-                                <option value="under-10k">Under $10,000</option>
-                                <option value="10k-25k">$10,000 - $25,000</option>
-                                <option value="25k-50k">$25,000 - $50,000</option>
-                                <option value="50k-100k">$50,000 - $100,000</option>
-                                <option value="over-100k">Over $100,000</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="timeline" class="form-label">Project Timeline</label>
-                            <select id="timeline" name="timeline" class="form-select">
-                                <option value="">Select timeline</option>
-                                <option value="asap">ASAP</option>
-                                <option value="1-month">Within 1 month</option>
-                                <option value="3-months">Within 3 months</option>
-                                <option value="6-months">Within 6 months</option>
-                                <option value="flexible">Flexible</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" class="form-label">Project Description *</label>
-                            <textarea id="message" name="message" class="form-textarea" rows="6" placeholder="Please describe your project, goals, and any specific requirements..." required></textarea>
-                            <span class="form-error" id="message-error"></span>
-                        </div>
-                        
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="newsletter" name="newsletter" class="form-checkbox">
-                                <span class="checkbox-text">Subscribe to our newsletter for project updates and industry insights</span>
-                            </label>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-large form-submit">
-                            <span class="btn-text">Send Message</span>
-                            <span class="btn-loading" style="display: none;">
-                                <svg class="loading-spinner" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="31.416" stroke-dashoffset="31.416">
-                                        <animate attributeName="stroke-dasharray" dur="2s" values="0 31.416;15.708 15.708;0 31.416" repeatCount="indefinite"/>
-                                        <animate attributeName="stroke-dashoffset" dur="2s" values="0;-15.708;-31.416" repeatCount="indefinite"/>
-                                    </circle>
-                                </svg>
-                                Sending...
-                            </span>
-                        </button>
-                    </form>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Common questions about our services and process</p>
-            </div>
-            
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3 class="faq-question">What types of projects do you work on?</h3>
-                    <p class="faq-answer">We specialize in spatial analysis, design, and community engagement projects. This includes GIS analysis, map creation, document design, logo development, stakeholder facilitation, and public participation processes.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3 class="faq-question">How long do projects typically take?</h3>
-                    <p class="faq-answer">Project timelines vary depending on scope and complexity. Simple design projects may take 2-4 weeks, while comprehensive spatial analysis or community engagement projects can take 3-8 months. We provide detailed timelines during the consultation phase.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3 class="faq-question">Do you work with clients outside your local area?</h3>
-                    <p class="faq-answer">Yes, we work with clients across the United States and internationally. We're experienced in remote collaboration and can adapt our processes to work effectively with distributed teams.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3 class="faq-question">What is your typical project process?</h3>
-                    <p class="faq-answer">Our process includes: 1) Discovery and consultation, 2) Project planning and proposal, 3) Analysis and development, 4) Review and iteration, and 5) Final delivery and support. We maintain regular communication throughout each phase.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-title">Commonspace</h3>
-                    <p class="footer-description">
-                        Professional consulting services in spatial analysis, design, and community engagement.
-                    </p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-subtitle">Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html#services">Spatial Analysis</a></li>
-                        <li><a href="index.html#services">Design</a></li>
-                        <li><a href="index.html#services">Community Engagement</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-subtitle">Navigation</h4>
-                    <ul class="footer-links">
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-subtitle">Contact</h4>
-                    <ul class="footer-links">
-                        <li><a href="mailto:info@commonspace.com">info@commonspace.com</a></li>
-                        <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Commonspace Consulting. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
 
     <!-- JavaScript Files -->
     <script src="js/main.js"></script>
-    <script src="js/parallax.js"></script>
-    <script src="js/form-validation.js"></script>
 </body>
 </html>
